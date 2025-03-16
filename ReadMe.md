@@ -1,7 +1,8 @@
 # What is the project
 The project's purpose is to make easy to use GUI tool for encrypting, cyphering, hashing and other cryptographic functions in simple GUI interface
 # Building 
-```mkdir build
+```bash
+mkdir build
 cd build
 cmake ..
 make -j4
