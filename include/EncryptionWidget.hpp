@@ -2,6 +2,7 @@
 #define ENCRYPTION_WIDGET_HPP
 
 #include <QWidget>
+#include <QSlider>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QTextEdit>
@@ -12,12 +13,17 @@
 #include <fstream>
 #include "EncryptionWidgetDataModel.hpp"
 #include "RainbowButton.hpp"
+#include "MyWidget.hpp"
 class MyMainWindow;
-class EncryptionWidget : public QWidget {
+class EncryptionWidget : public MyWidget {
     Q_OBJECT
 public:
     EncryptionWidget(MyMainWindow* parent, EncryptionWidgetDataModel model);
     ~EncryptionWidget(){};
+    virtual void setInputText(const QString& input) override;
+    virtual void setOutputText(const QString& input) override {};
+    virtual QString getInputText() const override {};
+    virtual QString getOutputText() const override ;
 private:
     EncryptionWidgetDataModel model;
     MyMainWindow* parentWindow;

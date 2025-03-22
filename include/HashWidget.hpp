@@ -13,13 +13,18 @@
 #include "HashWindowDataModel.hpp"
 #include "Gui.hpp"
 #include "RainbowButton.hpp"
+#include "MyWidget.hpp"
 class MyMainWindow;
-class HashWidget : public QWidget {
+class HashWidget : public MyWidget {
     Q_OBJECT
 
 public:
     HashWidget(MyMainWindow* parent, HashWindowDataModel model);
     ~HashWidget(){};
+    virtual void setInputText(const QString& input) override;
+    virtual QString getInputText() const override {};
+    virtual void setOutputText(const QString& input) override {};
+    virtual QString getOutputText() const override;
 private:
     HashWindowDataModel model;
     MyMainWindow* parentWindow;

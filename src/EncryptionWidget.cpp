@@ -1,7 +1,7 @@
 #include "EncryptionWidget.hpp"
 #include "Gui.hpp"
 EncryptionWidget::EncryptionWidget(MyMainWindow* parent, EncryptionWidgetDataModel model)
-    : QWidget(parent), parentWindow(parent), model(model), encryptionMenu(encryptionMenu) {
+    : MyWidget(parent), parentWindow(parent), model(model), encryptionMenu(encryptionMenu) {
     
     int counter = 0;
 
@@ -48,6 +48,14 @@ void EncryptionWidget::decrypt() {
 
 void EncryptionWidget::changeEncryption(int i) {
     model.setEncryption(i);
+}
+
+void EncryptionWidget::setInputText(const QString& input){
+    textBlock->setText(input);
+}
+
+QString EncryptionWidget::getOutputText() const{
+    return resultBlock->toPlainText();
 }
 
 void EncryptionWidget::openFileButton() {

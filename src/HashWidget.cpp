@@ -1,7 +1,7 @@
 #include "HashWidget.hpp"
 #include "Gui.hpp"
 HashWidget::HashWidget(MyMainWindow* parent, HashWindowDataModel model) 
-    : QWidget(parent), parentWindow(parent), model(model){
+    : MyWidget(parent), parentWindow(parent), model(model){
     
     int counter = 0;
     std::vector<HashBase*> hasher = model.getHashes();
@@ -64,4 +64,12 @@ void HashWidget::rainbowSwaping() {
 
 void HashWidget::themeSwaping() {
     std::cout << "Swaped" << std::endl;
+}
+
+void HashWidget::setInputText(const QString& input){
+    textBlock->setText(input);
+}
+
+QString HashWidget::getOutputText() const{
+    return resultBlock->toPlainText();
 }

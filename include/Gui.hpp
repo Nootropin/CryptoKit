@@ -26,19 +26,28 @@ class MyMainWindow : public QMainWindow {
 public:
     MyMainWindow(QWidget* parent, HashWindowDataModel model, EncryptionWidgetDataModel encryptModel, EncodingWidgetDataModel encodModel);
     ~MyMainWindow(){};
+private:
+    void initMenus();
+    void initStackedWidget();
+    void makeFilesButtonsInactive();
+    void makeFilesButtonsActive();
 private slots:
     void rainbowSwaping();
     void openHash(int counter);
     void openEncryption(int counter);
     void openEncoding();
     void swapSpaces();
+    void openFile();
+    void saveFile();
 private:
+    QMenu* fileMenu;
+    QStackedWidget* stackedWidget;
     HashWindowDataModel hashingModel;
     EncryptionWidgetDataModel encryptionModel;
-    QStackedWidget* stackedWidget;
+    EncodingWidgetDataModel encodingModel;
     HashWidget* hashWidget;
     EncryptionWidget* encryptionWidget;
-    QAction* rainbowTick;
+    EncodingWidget* encoding;
 };
 
 #endif // GUI_HPP
