@@ -12,7 +12,9 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include "EncodingWidgetDataModel.hpp"
-
+/**
+ * 
+ */
 class TextBlock : public QWidget {
     Q_OBJECT
 public:
